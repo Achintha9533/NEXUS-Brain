@@ -75,44 +75,6 @@ vht_digital_twin/
    └── Cox Survival → C-index 0.72+ (penalized)
 ```
 
-## **📊 Expected Results**
-```
-VHT Matrix: 120 features → 22 PCA components (95.2% variance)
-Classification F1: 0.68 (Alive/Dead)
-Cox Concordance: 0.724
-PC1 Drivers: ['Vel_Enhancing', 'Dose', 'Age at diagnosis', 'MGMT_methylation']
-```
-
-## **🎯 Key Outputs**
-1. **Scree Plot**: PCA variance explained
-2. **PC1 Barplot**: Top VHT signature drivers  
-3. **Confusion Matrix**: ML classification accuracy
-4. **Cox Forest Plot**: Hazard ratios per component
-5. **`df_vht_features.csv`**: Complete feature matrix
-
-## **🔬 Clinical Interpretation**
-```
-PC1 > +1.5 SD → "High-risk VHT signature" (HR=2.1)
-Vel_Enhancing > 0.05 mm³/day → 80% higher mortality risk
-PC3-PC5 interaction → Treatment response factor
-```
-
-## **⚠️ Troubleshooting**
-```
-❌ "KeyError: 'Patient ID'" → Check Excel column names
-❌ "Index out of range" → Verify seg volumes have 12+ columns  
-❌ "No kinetics" → Need ≥2 timepoints per patient
-❌ "PCA convergence" → Increase penalizer=0.1→0.5
-```
-
-## **📈 Thesis Integration**
-```
-Figure 3: PCA Scree + PC1 Drivers (VHT Signature)
-Figure 4: Confusion Matrix + Cox HR Forest  
-Table 2: Top 10 kinetic features by loading
-Results: "VHT C-index 0.724 vs 0.65 clinical-only (p<0.01)"
-```
-
 ## **🔗 License**
 ```
 Academic Research Use - Kasunachinthaperera@gmail.com
